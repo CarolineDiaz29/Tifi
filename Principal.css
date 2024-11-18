@@ -1,0 +1,320 @@
+/* Importación de fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=Titillium+Web:wght@200;300;400;600;700&display=swap');
+
+/* Variables de colores */
+:root {
+    --primary-dark: #1a237e;
+    --primary-light: #534bae;
+    --accent-color: #ffffff;
+    --text-primary: #1a237e;
+    --hover-color: #283593;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    background-color: #f5f5f7;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background: linear-gradient(to right, #534bae, #1a237e, #534bae);
+    color: white;
+    padding: 20px;
+    margin: 0 auto;
+    gap: 10px;
+    border-radius: 10px;
+}
+
+header nav {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 15px;
+    background-color: #ffffff;
+    color: #333;
+}
+
+header nav i {
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+h1 {
+    font-size: 100px;
+    font-weight: 900;
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.7);
+    font-weight: bold;
+    margin: 0;
+}
+
+.barra-vertical {
+    font-size: 100%;
+    transform: scaleY(5);
+}
+
+header {
+    height: 100%;
+    width: 100%;
+    /*background-image: url('img/Header.png');*/
+    background-size: cover;
+    background-position: center;
+}
+
+/* Contenedor principal */
+main {
+    max-width: 1200px;
+    margin: -50px auto 0;
+    padding: 20px;
+    display: flex;
+    gap: 30px;
+    position: relative;
+}
+
+/* Contenedor de productos */
+.arepas {
+    padding-top: 100px;
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background-color: var(--accent-color);
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(26, 35, 126, 0.08);
+}
+
+/* Diseño de las tarjetas individuales */
+.arepa {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 350px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    text-align: center;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.arepa img {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+    border-radius: 8px;
+    background-color: #f5f5f5;
+}
+
+.arepa:hover {
+    transform: scale(1.05);
+}
+
+.arepa figcaption {
+    margin: 10px 0;
+    font-weight: bold;
+    color: var(--text-primary);
+}
+
+.arepa-btn {
+    background-color: var(--primary-dark);
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.arepa-btn:hover {
+    background-color: var(--hover-color);
+}
+
+/* Estilos del carrito */
+.carrito {
+    display: none; /* Oculto inicialmente */
+    position: absolute;
+    top: 50px; /* Ajusta según tu diseño */
+    right: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    max-height: 500px; /* Define una altura máxima */
+    overflow-y: auto; /* Habilita el desplazamiento vertical */
+  }
+
+.fa-cart-shopping {
+    cursor: pointer;
+    padding: 10px;
+}
+
+.header-carrito {
+    background-color: var(--primary-dark);
+    color: white;
+    padding: 15px;
+    border-radius: 8px 8px 0 0;
+    text-align: center;
+}
+
+.carrito-items {
+    padding: 20px;
+}
+
+.carrito-item {
+    display: flex;
+    gap: 15px;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.carrito-item-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.carrito-item-detalles {
+    flex: 1;
+}
+
+.carrito-item-titulo {
+    color: var(--text-primary);
+    margin-bottom: 10px;
+}
+
+.carrito-item-cantidad {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.cantidad-btn-menos,
+.cantidad-btn-mas {
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--primary-dark);
+    border-radius: 50%;
+    background: none;
+    color: var(--primary-dark);
+    cursor: pointer;
+}
+
+.carrito-item-eliminar {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #666;
+    padding: 5px;
+}
+
+.carrito-item-eliminar:hover {
+    color: #ff0000;
+}
+
+.carrito-total {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 0 0 8px 8px;
+}
+
+.fila {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.btn-pagar {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-dark);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-pagar:hover {
+    background-color: var(--hover-color);
+}
+
+/* Media Queries */
+@media screen and (max-width: 1024px) {
+    main {
+        flex-direction: column;
+    }
+
+    .carrito {
+        width: 100%;
+        position: static;
+        margin-top: 20px;
+    }
+
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header .header,
+    header nav {
+        width: 100%;
+        text-align: center;
+        line-height: 30px;
+    }
+
+    .header h1 {
+        font-size: 60px;  /* Ajusta el tamaño del h1 */
+    }
+
+    .header h2 {
+        font-size: 15px;  /* Ajusta el tamaño del h2 */
+    }
+
+    .header .barra-vertical,
+    .header h2 br {
+        display: none;  /* Oculta h2 y barra-vertical en pantallas pequeñas */
+    }
+}
+.carrito-vacio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+    color: #666;
+}
+
+.carrito-vacio i {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    color: #ccc;
+}
+
+.carrito-vacio p {
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.carrito-items:empty + .carrito-vacio {
+    display: flex;
+}
+
+.carrito-items:not(:empty) + .carrito-vacio {
+    display: none;
+}

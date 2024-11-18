@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TIFI | Tienda de Ropa </title>
+        <link rel="stylesheet" href="Principal.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <script src="https://kit.fontawesome.com/b1a92dbb22.js" crossorigin="anonymous"></script>
+        <link rel="icon" href="img/Header.png" type="image/png">
+    </head>
+    <body>
+    <header>
+        <div class="header">
+            <h1>TIFÍ</h1> 
+            <h3 class="barra-vertical">|</h3>
+            <H2>KOREAN FASHION <br>BOUTIQUE</H2>
+        </div>
+        <nav id="nav-carrito"><i class="fa-sharp fa-solid fa-cart-shopping"></i></nav>
+    </header>
+
+    <section class="arepas" id="arepas"></section>
+
+    <template id="arepa-template">
+        <figure class="arepa">
+            <img>
+            <figcaption></figcaption>
+            <button class="arepa-btn">Agregar al carrito</button>
+        </figure>
+    </template>
+
+    <div id="carrito" class="carrito">
+        <div class="header-carrito">
+            <h2>Tu Carrito</h2>
+        </div>
+        
+        <div class="carrito-items">
+        </div>
+
+        <!-- Nuevo elemento para carrito vacío -->
+        <div class="carrito-vacio">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <p>Tu carrito está vacío</p>
+            <p>¡Agrega algunos productos!</p>
+        </div>
+
+        <div class="carrito-total">
+            <div class="fila">
+                <strong>Total</strong>
+                <span class="carrito-precio-total">$0</span>
+            </div>
+            <button class="btn-pagar">Pagar</button>
+        </div>
+    </div>
+
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="js/script.js" type="module"></script>
+</body>
+</html>

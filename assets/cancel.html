@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compra Cancelada</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e0eafc 100%);
+            padding: 20px;
+        }
+
+        .cancel-container {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+        }
+
+        .cancel-icon {
+            width: 80px;
+            height: 80px;
+            background: #ff7675;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 20px;
+            animation: pulse 2s infinite;
+        }
+
+        .cancel-icon::before {
+            content: "←";
+            color: white;
+            font-size: 40px;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        h1 {
+            color: #2d3436;
+            margin-bottom: 15px;
+            font-size: 28px;
+        }
+
+        p {
+            color: #636e72;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 12px 28px;
+            background: #6c5ce7;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            font-size: 16px;
+            box-shadow: 0 4px 15px rgba(108, 92, 231, 0.2);
+        }
+
+        .back-button:hover {
+            background: #5b4bc4;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(108, 92, 231, 0.3);
+        }
+
+        .back-button:active {
+            transform: translateY(0);
+        }
+
+        .message {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            color: #636e72;
+            font-size: 15px;
+            border-left: 4px solid #6c5ce7;
+        }
+
+        @keyframes fadeIn {
+            from { 
+                opacity: 0; 
+                transform: translateY(20px); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0); 
+            }
+        }
+
+        .cancel-container {
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        @media (max-width: 480px) {
+            .cancel-container {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .cancel-icon {
+                width: 60px;
+                height: 60px;
+            }
+
+            .cancel-icon::before {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cancel-container">
+        <div class="cancel-icon"></div>
+        <h1>Compra Cancelada</h1>
+        <p>No te preocupes, no se ha realizado ningún cargo a tu cuenta.</p>
+        
+        <div class="message">
+            Tu carrito se ha guardado y podrás retomar tu compra cuando lo desees.
+        </div>
+
+        <a href="/Principal.html" class="back-button">Volver a la tienda</a>
+    </div>
+
+    <script>
+        // Restaurar el carrito desde sessionStorage si existe
+        const pendingCart = sessionStorage.getItem('pendingCart');
+        if (pendingCart) {
+            localStorage.setItem('cartItems', pendingCart);
+            sessionStorage.removeItem('pendingCart');
+        }
+    </script>
+</body>
+</html>
